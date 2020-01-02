@@ -10,6 +10,7 @@
 /**
  * 
  */
+class APortraitRenderActor;
 UCLASS(ClassGroup = (Custom), meta = (BlueprintSpawnableComponent))
 class DGRG_2_API UEquipSlot : public UItemContainer
 {
@@ -64,6 +65,9 @@ protected:
 public:
 	bool CheckEquipSlotWithType(E_EQUIPMENT typeWant);
 	void SetEquipSlotAble(E_EQUIPMENT typeWant, bool wantAble);
+	void SetPortraitActor(APortraitRenderActor* portActor);
+protected:
+	APortraitRenderActor* m_PortraitActor;
 };
 //HEAD = 0x00000001,
 //NECK = 0x00000002,

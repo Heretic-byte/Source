@@ -1,10 +1,10 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
-#include "DGRG_Macro.h"
+#include "Datas/DGRG_Macro.h"
 
 #include "UObject/NoExportTypes.h"
-#include "DGRG_Struct.h"
+#include "Datas/DGRG_Struct.h"
 #include "GameInstanceSetter.h"
 //
 //

@@ -2,7 +2,7 @@
 
 
 #include "DGRG_HumanCharacter_AnimInstance.h"
-#include "DGRG_BaseCharacter.h"
+#include "Actor/DGRG_BaseCharacter.h"
 
 void UDGRG_HumanCharacter_AnimInstance::SetMoveVector()
 {

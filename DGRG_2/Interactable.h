@@ -2,12 +2,13 @@
 
 #pragma once
 
-#include "DGRG_Macro.h"
-#include "DGRG_Enum.h"
+#include "Datas/DGRG_Macro.h"
+#include "Datas/DGRG_Enum.h"
 #include "Components/ActorComponent.h"
+#include "Actor/DGRG_BaseCharacter.h"
 #include "Interactable.generated.h"
 
-class ADGRG_BaseCharacter;
+//class ADGRG_BaseCharacter;//1225
 
 UCLASS(ClassGroup = (Custom), meta = (BlueprintSpawnableComponent))
 class  UInteractable :   public UActorComponent
@@ -25,7 +26,7 @@ public:
 	ADGRG_BaseCharacter::FVoidActorBP OnInteractBP;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	bool m_Unlocked;
+	bool m_bUnlocked;
 
 	UPROPERTY(BlueprintAssignable, Category = "Interact")
 	ADGRG_BaseCharacter::FVoidActorBP OnCantInteractBP;

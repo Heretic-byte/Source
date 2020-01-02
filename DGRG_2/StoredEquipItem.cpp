@@ -2,13 +2,13 @@
 
 
 #include "StoredEquipItem.h"
-#include "DGRG_Enum.h"
-#include "DataTableRowBase.h"
-#include "DGRG_GameInstance.h"
-#include "DGRG_PlayerCon.h"
-#include "WidgetMainMenu.h"
-#include "WidgetSlotGrid.h"
-#include "OptionManager.h"
+#include "Datas/DGRG_Enum.h"
+#include "Datas/DataTableRowBase.h"
+#include "Manager/DGRG_GameInstance.h"
+#include "Actor/DGRG_PlayerCon.h"
+#include "Widgets/WidgetMainMenu.h"
+#include "Widgets/WidgetSlotGrid.h"
+#include "Manager/OptionManager.h"
 
 UStoredEquipItem::UStoredEquipItem()
 {

@@ -2,7 +2,7 @@
 
 
 #include "StoredMaterialItem.h"
-#include "DataTableRowBase.h"
+#include "Datas/DataTableRowBase.h"
 
 UStoredMaterialItem::UStoredMaterialItem()
 {

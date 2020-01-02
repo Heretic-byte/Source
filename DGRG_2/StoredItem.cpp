@@ -2,9 +2,9 @@
 
 
 #include "StoredItem.h"
-#include "DGRG_GameInstance.h"
-#include "DataTableRowBase.h"
-#include "DGRG_PlayerCon.h"
+#include "Manager/DGRG_GameInstance.h"
+#include "Datas/DataTableRowBase.h"
+#include "Actor/DGRG_PlayerCon.h"
 
 UStoredItem::UStoredItem():
 	m_WidthHeight(2,3)

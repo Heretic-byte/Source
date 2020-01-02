@@ -6,13 +6,13 @@
 UInteractable::UInteractable()
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
-	m_Unlocked = true;
+	m_bUnlocked = true;
 }
 
 
 void UInteractable::Interact(AActor* interMan)
 {
-	if (!m_Unlocked)
+	if (!m_bUnlocked)
 	{
 		OnCantInteractBP.Broadcast(interMan);
 		return;
@@ -22,13 +22,13 @@ void UInteractable::Interact(AActor* interMan)
 
 void UInteractable::SetLock()
 {
-	m_Unlocked = false;
+	m_bUnlocked = false;
 	OnLockedBP.Broadcast();
 }
 
 void UInteractable::SetUnlock()
 {
-	m_Unlocked = true;
+	m_bUnlocked = true;
 	OnUnlockedBP.Broadcast();
 }
 

@@ -24,13 +24,14 @@ public class DGRG_2 : ModuleRules
            "EasyActionPlugin",
            "Slate",
            "SlateCore",
-            "DungeonArchitectRuntime" });//"UMG"
+            "DungeonArchitectRuntime"
+        });//"UMG"
 
 
         PrivateDependencyModuleNames.AddRange(new string[] {
             "DialoguePlugin",
             "EasyActionPlugin",
-            "DungeonArchitectRuntime"
+           "DungeonArchitectRuntime"
             });
     }
 }

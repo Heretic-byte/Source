@@ -2,9 +2,9 @@
 
 #pragma once
 
-#include "DGRG_Macro.h"
-#include "DGRG_Enum.h"
-#include "DataTableRowBase.h"
+#include "Datas/DGRG_Macro.h"
+#include "Datas/DGRG_Enum.h"
+#include "Datas/DataTableRowBase.h"
 #include "StoredItem.h"
 #include "Components/ActorComponent.h"
 #include "ItemContainer.generated.h"

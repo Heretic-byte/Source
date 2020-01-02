@@ -2,9 +2,9 @@
 
 
 #include "EquipSlot.h"
-#include "EquipmentShowActor.h"
-#include "DGRG_CombatCharacter.h"
-
+#include "Actor/EquipmentShowActor.h"
+#include "Actor/DGRG_CombatCharacter.h"
+#include "Actor/PortraitRenderActor.h"
 
 UEquipSlot::UEquipSlot()
 {
@@ -44,6 +44,11 @@ bool UEquipSlot::CheckEquipSlotWithType(E_EQUIPMENT typeWant)
 void UEquipSlot::SetEquipSlotAble(E_EQUIPMENT typeWant,bool wantAble)
 {
 	m_AbleEquipSlot[(int)typeWant]= wantAble;
+}
+
+void UEquipSlot::SetPortraitActor(APortraitRenderActor * portActor)
+{
+	m_PortraitActor = portActor;
 }
 
 bool UEquipSlot::AddItemToPivot(FCoord pivot,  UStoredItem* dItem)
@@ -132,6 +137,7 @@ void UEquipSlot::SetUnEquipItem()
 	m_OnUnequippedBP.Broadcast();
 	if (m_CurrentEquipitemActor)
 	{
+		m_PortraitActor->DestoryEquipActor(m_CurrentEquipitemActor->GetFName());
 		m_CurrentEquipitemActor->Destroy();
 	}
 }
@@ -180,9 +186,11 @@ void UEquipSlot::CreateEquipMesh()
 	auto* CreatedItemActor = GetWorld()->SpawnActor(HasMesh, &AttachParent->GetComponentTransform());
 	auto* CreatedItem = Cast<AEquipmentShowActor>(CreatedItemActor);
 	FAttachmentTransformRules AttachInfo(EAttachmentRule::SnapToTarget, EAttachmentRule::SnapToTarget, EAttachmentRule::KeepRelative,false);
+
 	CreatedItem->AttachToComponent(AttachParent, AttachInfo, GetSlotSocketName());
 	m_CurrentEquipitemActor = CreatedItem;
 	CreatedItem->SetScale(GetCurrentEquippedData()->GetEquipItemData().m_Scale);
+	m_PortraitActor->AttachEquipMesh(AttachInfo, GetSlotSocketName(), CreatedItem);
 }
 
 
